@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 210 25% 97%;
+  --foreground: 215 28% 12%;
+  --card: 0 0% 100%;
+  --card-foreground: 215 28% 12%;
+  --primary: 173 80% 26%;
+  --primary-foreground: 0 0% 100%;
+  --muted: 210 22% 93%;
+  --muted-foreground: 215 12% 42%;
+  --border: 214 20% 88%;
+  --input: 214 20% 82%;
+  --ring: 173 80% 30%;
+  --destructive: 0 70% 48%;
+  --destructive-foreground: 0 0% 100%;
+  --jade: 160 62% 34%;
+  --flame: 24 92% 50%;
+  --radius: 1rem;
+}
+.dark {
+  --background: 220 22% 8%;
+  --foreground: 210 20% 94%;
+  --card: 220 20% 11%;
+  --card-foreground: 210 20% 94%;
+  --primary: 168 70% 46%;
+  --primary-foreground: 220 30% 8%;
+  --muted: 220 16% 16%;
+  --muted-foreground: 215 12% 64%;
+  --border: 220 14% 20%;
+  --input: 220 14% 26%;
+  --ring: 168 70% 46%;
+  --destructive: 0 70% 56%;
+  --destructive-foreground: 0 0% 100%;
+  --jade: 160 60% 44%;
+  --flame: 26 95% 56%;
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground antialiased; }
+  input, select, textarea { font-size: 16px; } /* cegah zoom otomatis di iOS */
+}
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+.safe-top { padding-top: env(safe-area-inset-top); }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
